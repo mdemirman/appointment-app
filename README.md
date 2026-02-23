@@ -58,7 +58,7 @@ A modern, production-ready clinic queue and appointment management system built 
 
    Create `.env` file in the root directory:
    ```env
-   DATABASE_URL="postgresql://mustafa@localhost/patient_queue?schema=public&host=/tmp"
+   DATABASE_URL="postgresql://username@localhost/blabla"
    BETTER_AUTH_SECRET="your-secret-key-here"
    BETTER_AUTH_URL="http://localhost:3000"
    ```
@@ -157,12 +157,6 @@ appointment-app/
 ### Session & Account
 - Managed by Better Auth for authentication
 
-## Authentication
-
-### Default Doctor Account
-- **Username:** `doctor`
-- **Password:** `doctor123`
-
 ### Password Hashing
 Passwords are securely hashed using Better Auth's internal hashing algorithm. Never store plain text passwords.
 
@@ -196,12 +190,12 @@ Passwords are securely hashed using Better Auth's internal hashing algorithm. Ne
 ### For Patients (Public Screen)
 1. View the live queue display
 2. Click "Get Appointment"
-3. Enter Turkish ID, first name, and last name
+3. Enter TC kimlik ID, first name, and last name
 4. Receive queue number
 5. Wait for your number to be called
 
 ### For Doctors (Dashboard)
-1. Login with username `doctor` and password `doctor123`
+1. Login as a doctor
 2. View current patient being served
 3. See waiting queue list
 4. Operations:
@@ -230,9 +224,9 @@ BETTER_AUTH_URL=http://localhost:3000
 ```
 
 ### Database Connection (PostgreSQL on macOS)
-By default, Homebrew PostgreSQL uses Unix socket at `/tmp`. The connection string includes `&host=/tmp` to use this socket:
+
 ```
-postgresql://mustafa@localhost/patient_queue?schema=public&host=/tmp
+postgresql://username@localhost/blabla
 ```
 
 ## Development
@@ -267,11 +261,6 @@ npm run build
 3. Generate a strong `BETTER_AUTH_SECRET`
 4. Set `BETTER_AUTH_URL` to your production domain
 
-### Hosting Options
-- **Vercel** - Recommended for Next.js (free tier available)
-- **Railway** - Full-stack deployment
-- **AWS EC2** - Full control
-- **DigitalOcean** - Affordable VPS
 
 ## Performance Considerations
 
@@ -317,15 +306,9 @@ Contributions are welcome! Please follow these steps:
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Support
 
 For issues, questions, or suggestions, please open an issue on GitHub.
 
----
 
-**Built with ❤️ for clinics and hospitals**
-# appointment-app
